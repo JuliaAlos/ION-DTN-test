@@ -22,6 +22,7 @@ $ ./configure (If configure is not present run: "autoreconf -fi" first)
 $ make
 $ sudo make install
 ````
+
 `NOTE`: if you want to set overriding compile-time switches for a build, 
 the place to do this is in the ./configure command.  For details,
 
