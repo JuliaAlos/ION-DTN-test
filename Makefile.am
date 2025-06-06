@@ -1848,7 +1848,8 @@ bpbin = \
 	tcpcli \
 	tcpclo \
 	udpcli \
-	udpclo
+	udpclo \
+	bpjulia
 
 #Uncomment if you want to build killm.exe
 #if WINDOWS
@@ -1998,7 +1999,8 @@ bpextra = \
 	bpv7/library/ext/bae/bae.h \
 	bpv7/library/ext/bae/bae.c \
 	ici/include/crypto.h \
-	ici/include/csi.h
+	ici/include/csi.h \
+	bpv7/doc/pod1/bpjulia.pod
 
 if ENABLE_IMC
 bpextra += \
@@ -2064,7 +2066,8 @@ bpmans = \
 	$(top_builddir)/bpv7/doc/bpsecrc.5 \
 	$(top_builddir)/bpv7/doc/dtn2rc.5 \
 	$(top_builddir)/bpv7/doc/ipnrc.5 \
-	$(top_builddir)/bpv7/doc/lgfile.5
+	$(top_builddir)/bpv7/doc/lgfile.5 \
+	$(top_builddir)/bpv7/doc/bpjulia.1
 
 if ENABLE_IMC
 bpmans += \
@@ -2535,6 +2538,10 @@ recvfile_CFLAGS = $(bpcflags) $(AM_CFLAGS)
 sendfile_SOURCES = bpv7/utils/sendfile.c
 sendfile_LDADD = libici.la $(bplib) $(secryptlib) $(metadatalib)
 sendfile_CFLAGS = $(bpcflags) $(AM_CFLAGS)
+
+bpjulia_SOURCES = bpv7/test/bpjulia.c
+bpjulia_LDADD = libici.la $(bplib)
+bpjulia_CFLAGS = $(bpcflags) $(AM_CFLAGS)
 
 # --- Daemon Executables --- #
 
